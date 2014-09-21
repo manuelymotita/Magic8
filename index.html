@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Ghetto Magic 8 Ball</title>
+		 <link href="style.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<img class="button" src="images/button.png" alt="button"  width="150px" height="150" />
+		<div id="eight-ball">
+			<button class="button" onclick="shake()">SHAKE</button>
+			<p id="question"></p>
+			<p id="answer"></p>
+		</div>
+		<img class="answer" src="images/BACKGROUND-01.png" alt="background"/>
+	</body>	
+		<script>
+		
+			function shake (){
+				var question = prompt("ask me a question");
+				var questionText = document.getElementById('question');
+				questionText.innerHTML = question;
+		
+				var numberOfAnswers = 6;
+		
+				var answerOne = "Hell Yeah";	
+				var answerTwo = "Hell Nah";
+				var answerThree = "Maybe u Is";
+				var answerFour = "Aint Nobody Got Time For That";
+				var answerFive = "Dah Fuck";
+				var answerSix = "You Thirsty";
+			
+				var chosenAnswer = getAnswerNumber(numberOfAnswers);
+				displayAnswer(chosenAnswer);
+			
+			function getAnswerNumber(answerCount){
+				var number = getRandomInt(1,answerCount);
+				return number;
+			}
+			
+			function getRandomInt(min,max){
+				return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+			
+			function displayAnswer(answer) {
+				var fortuneText = document.getElementById('answer');
+				if ( answer == 1) {
+					fortuneText.innerHTML = answerOne;
+				}
+				else if ( answer == 2) {
+				fortuneText.innerHTML = answerTwo;
+				}
+				else if ( answer == 3) {
+				fortuneText.innerHTML = answerThree;
+				}
+				else if ( answer == 4) {
+				fortuneText.innerHTML = answerFour;
+				}
+				else if ( answer == 5) {
+				fortuneText.innerHTML = answerFive;
+				}
+				else if ( answer == 6) {
+				fortuneText.innerHTML = answerSix;
+				}
+			}
+			}
+				
+		</script>
+</html>
