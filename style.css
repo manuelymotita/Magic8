@@ -9,6 +9,7 @@ html {
     }
     
 .button {
+	position:relative;
 	font-family: helvetica;
 	font-weight: 100;
 	font-size:14pt;
@@ -40,9 +41,11 @@ p {
 	
 img.answer{
 	
-	position:absolute;
-	top: 250px;
-	left: 445px;
+	position:fixed;
+	top:250px;
+	left: auto;
+	right: auto;
+	margin-left: -150px;
 	width: 300px;
 	height: auto;
 	z-index: -1;
